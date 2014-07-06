@@ -6,6 +6,9 @@
 	<title></title>
 </head>
 <body>
+
+	@include('layouts.partials.nav')
+
 	<div class="container">
 		@yield('content')
 	</div>
