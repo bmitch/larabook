@@ -17,3 +17,5 @@ $I->see('Welcome to Larabook');
 $I->seeRecord('users', [
 	'username' => 'JohnDoe'
 ]);
+
+$I->assertTrue(Auth::check());
