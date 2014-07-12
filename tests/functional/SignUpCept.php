@@ -10,6 +10,8 @@ $I->seeCurrentUrlEquals('/register');
 $I->fillField('Username:', 'JohnDoe');
 $I->fillField('Email:', 'john@example.com');
 $I->fillField('Password:', 'demo');
+$I->fillField('Password Confirmation:', 'demo');
+
 $I->click('Sign Up');
 
 $I->seeCurrentUrlEquals('');

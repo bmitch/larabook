@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="form-group">
-					{{ Form::label('password_confirmation', 'Password:') }}
+					{{ Form::label('password_confirmation', 'Password Confirmation:') }}
 					{{ Form::password('password_confirmation', null,  ['class' => 'form-control']) }}
 				</div>
 
