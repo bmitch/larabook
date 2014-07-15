@@ -4,9 +4,13 @@
       <div class="jumbotron">
         <h1>Welcome to Larabook!</h1>
         <p>Blah blah blah</p>
+
+        @if (! $currentUser)
         <p>
         	{{ link_to_route('register_path', 'Sign Up!', null, ['class' => 'btn btn-lg btn-primary'] )}}
         </p>
+
+        @endif
       </div>
 
 @stop
