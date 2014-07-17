@@ -32,7 +32,8 @@
             </ul>
           </li>
           @else
-            <li><a href="/login">Login</a></li>
+            <li> {{ link_to_route('register_path', 'Register' ) }} </li>
+            <li> {{ link_to_route('Login_path', 'Log In' ) }}</li>
           @endif
       </ul>
       

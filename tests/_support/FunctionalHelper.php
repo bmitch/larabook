@@ -30,8 +30,20 @@ class FunctionalHelper extends \Codeception\Module
 	public function haveAnAccount($overrides =[])
 	{
 		// could just do User::create here
+		return $this->have('Larabook\Users\User', $overrides);
 
-		TestDummy::create('Larabook\Users\User', $overrides);
+	}
 
+	public function postAStatus($body)
+	{
+		//return $this->have('Larabook\Statuses\Status', $overrides);
+		$I = $this->getModule('Laravel4');
+		$I->fillField('Status:', $body);
+		$I->click('Post Status');
+	}
+
+	public function have($model, $overrides = [])
+	{
+		return TestDummy::create($model, $overrides);
 	}
 }
