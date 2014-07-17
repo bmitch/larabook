@@ -7,7 +7,7 @@ class StatusRepository
 
 	public function getAllForUser(User $user)
 	{	
-		return $user->statuses;
+		return $user->statuses()->get();
 
 	}
 	public function save(Status $status, $userId)
