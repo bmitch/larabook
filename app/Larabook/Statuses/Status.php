@@ -2,13 +2,16 @@
 
 use Laracasts\Commander\Events\EventGenerator;
 use Larabook\Statuses\Events\StatusWasPublished;
+use Laracasts\Presenter\PresentableTrait;
 
 class Status extends \Eloquent 
 {
 
-	use EventGenerator;
+	use EventGenerator, PresentableTrait;
 
 	protected $fillable = ['body'];
+
+	protected $presenter = 'Larabook\Statuses\StatusPresenter';
 
 	// late static binding
 	public static function publish($body)
