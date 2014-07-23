@@ -6,4 +6,9 @@ class UserRepository
 	{
 		return $user->save();
 	}
+
+	public function getPaginated($howMany = 100)
+	{
+		return User::paginate($howMany);
+	}
 }
