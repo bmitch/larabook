@@ -53,7 +53,13 @@ Route::post('statuses', [
 	'uses' => 'StatusController@store'
 ]);
 
-Route::get('users', [
-	'as' => 'statuses_path',
+Route::get('users',  [
+	'as' => 'users_path',
 	'uses' => 'UsersController@index'
+]);
+
+
+Route::get('@{username}',  [
+	'as' => 'profile_path',
+	'uses' => 'UsersController@show'
 ]);
