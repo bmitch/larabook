@@ -40,15 +40,17 @@ class SessionsController extends \BaseController {
 
 
 		// if it is valid, then try to sign them in
-		if (Auth::attempt($formData))
+		if ( ! Auth::attempt($formData))
 		{
 
-			// redirect to statuses
-			Flash::message('Welcome back!');
-			return Redirect::intended('/statuses');
+			Flash::message('We were unable to sign you in!');
 
+			return Redirect::back()->withInput();
 		}
 
+		// redirect to statuses
+		Flash::message('Welcome back!');
+		return Redirect::intended('/statuses');
 	}
 
 
